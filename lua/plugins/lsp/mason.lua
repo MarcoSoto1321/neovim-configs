@@ -30,14 +30,14 @@ return {
         "ts_ls",
         "html",
         "cssls",
-        "tailwindcss",
-        "svelte",
-        "lua_ls",
-        "graphql",
         "emmet_ls",
-        "prismals",
-        "pyright",
         "eslint",
+        "lua_ls",
+        "pyright",
+        "jdtls", -- java
+        "bashls",
+        "yamlls",
+        "ansiblels",
       },
     })
 
@@ -49,6 +49,11 @@ return {
         "black", -- python formatter
         "pylint",
         "eslint_d",
+        "google-java-format", -- java formatter
+        "shfmt", -- bash formatter
+        "shellcheck", -- bash linter
+        "ansible-lint",
+        "apex-language-server", -- salesforce apex (enabled manually in lspconfig.lua)
       },
     })
   end,

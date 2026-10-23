@@ -78,28 +78,19 @@ return {
       capabilities = capabilities,
     })
 
-    vim.lsp.config("svelte", {
-      on_attach = function(client, bufnr)
-        vim.api.nvim_create_autocmd("BufWritePost", {
-          pattern = { "*.js", "*.ts" },
-          callback = function(ctx)
-            -- Here use ctx.match instead of ctx.file
-            client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
-          end,
-        })
-      end,
+    vim.lsp.config("apex_ls", {
+      apex_jar_path = vim.fn.stdpath("data") .. "/mason/share/apex-language-server/apex-jorje-lsp.jar",
+      apex_enable_semantic_errors = false,
+      apex_enable_completion_statistics = false,
     })
-
-    vim.lsp.config("graphql", {
-      filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-    })
+    vim.lsp.enable("apex_ls")
 
     vim.lsp.config("emmet_ls", {
-      filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+      filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
     })
 
     vim.lsp.config("eslint", {
-      filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+      filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
     })
 
     vim.lsp.config("lua_ls", {

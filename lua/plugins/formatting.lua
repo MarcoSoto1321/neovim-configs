@@ -6,21 +6,18 @@ return {
 
 		conform.setup({
 			formatters_by_ft = {
-				c = { "clang-format" },
 				javascript = { "prettier" },
-				typescript = { "prettier" },
-				javascriptreact = { "prettier" },
-				typescriptreact = { "prettier" },
-				svelte = { "prettier" },
 				css = { "prettier" },
 				html = { "prettier" },
 				json = { "prettier" },
 				yaml = { "prettier" },
+				["yaml.ansible"] = { "prettier" },
 				markdown = { "prettier" },
-				graphql = { "prettier" },
-				liquid = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
+				java = { "google-java-format" },
+				sh = { "shfmt" },
+				bash = { "shfmt" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
